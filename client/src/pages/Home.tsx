@@ -37,7 +37,7 @@ const overviewCards = [
 ];
 
 function Mark() {
-  return <span className="brand-mark" aria-hidden="true"><img src="/manus-storage/taptype-mark_ba4fba5c.png" alt="" /></span>;
+  return <span className="brand-mark" aria-hidden="true"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663901806309/UzvSwJoXrAQoxvvx.png" alt="" /></span>;
 }
 
 function SectionLabel({ number, label }: { number: string; label: string }) {
@@ -49,6 +49,8 @@ function DataList({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
+  const appPath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
+
   return (
     <div className="policy-shell">
       <header className="site-header">
@@ -64,7 +66,7 @@ export default function Home() {
             <p className="hero-intro">TapType is an online typing game developed and operated by TapType. This policy explains what we collect, how we use it, where it is stored, who may process it, and the choices available to you.</p>
             <div className="document-meta" aria-label="Document information"><span><b>Last updated</b> August 20, 2026</span><span><b>Account required</b> to play TapType</span></div>
           </div>
-          <div className="hero-visual" aria-label="Abstract illustration of keyboard data moving safely through TapType" role="img"><img src="/manus-storage/taptype-keyboard-circuit_939be43d.png" alt="" /><span className="hero-stamp">Player data<br /><strong>on a clear route</strong></span></div>
+          <div className="hero-visual" aria-label="Abstract illustration of keyboard data moving safely through TapType" role="img"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663901806309/ScvfWEbDJegTsJdJ.png" alt="" /><span className="hero-stamp">Player data<br /><strong>on a clear route</strong></span></div>
         </section>
 
         <section className="quick-facts" aria-label="Privacy highlights">
@@ -77,7 +79,7 @@ export default function Home() {
           <aside className="policy-rail" aria-label="Privacy policy sections">
             <p className="rail-label">On this route</p>
             <nav>{policySections.map(([number, name, id]) => <a href={`#${id}`} key={id}><span>{number}</span>{name}<ChevronRight size={14} /></a>)}</nav>
-            <a className="rail-deletion" href="/account-deletion"><Trash2 size={15} /> Account deletion</a>
+            <a className="rail-deletion" href={appPath("/account-deletion")}><Trash2 size={15} /> Account deletion</a>
           </aside>
 
           <article className="policy-document">
@@ -95,7 +97,7 @@ export default function Home() {
 
             <section className="policy-section data-section" id="gameplay">
               <SectionLabel number="02" label="Gameplay, matchmaking & multiplayer" />
-              <div className="section-heading-with-art"><div><h2>The data that keeps the race running.</h2><p>TapType records gameplay information to provide rankings, rewards, multiplayer matches, statistics, and other competitive features.</p></div><img src="/manus-storage/taptype-data-care_71727ea9.png" alt="Abstract cards representing protected account, game, and payment data" /></div>
+              <div className="section-heading-with-art"><div><h2>The data that keeps the race running.</h2><p>TapType records gameplay information to provide rankings, rewards, multiplayer matches, statistics, and other competitive features.</p></div><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663901806309/hzLyVlQwCxdskDtA.png" alt="Abstract cards representing protected account, game, and payment data" /></div>
               <div className="data-map">{overviewCards.map(({ icon: Icon, title, text }, index) => <div className="data-row" key={title}><span className="data-number">0{index + 1}</span><span className="data-icon"><Icon size={20} /></span><div><h3>{title}</h3><p>{text}</p></div></div>)}</div>
               <div className="detail-table" role="table" aria-label="Competitive data TapType may record">
                 <div className="detail-head" role="row"><span role="columnheader">Feature</span><span role="columnheader">Information that may be recorded</span></div>
@@ -139,7 +141,7 @@ export default function Home() {
               <h2>Keeping the route protected—and giving you an exit.</h2>
               <p>TapType uses reasonable technical and organizational measures to protect account information. Our backend uses authentication and database access controls to restrict unauthorized access to protected information. We also use server-side processing for certain multiplayer and scoring operations to reduce opportunities for competitive manipulation. No online service can guarantee complete security, so choose a strong password and keep account credentials private.</p>
               <p>We keep information for as long as reasonably necessary to provide TapType. Account and progression information may remain while an account is active. Game results, statistics, rankings, and similar information may be retained to maintain leaderboards, rankings, and competitive history. Chat messages are automatically deleted after 24 hours. Profile pictures remain until replaced, removed, or the account is deleted, subject to normal technical and backup retention.</p>
-              <div className="choice-panel"><div><Trash2 size={21} /><h3>Delete from inside the game</h3><p>TapType provides an account-deletion option within the application. You can use it to request deletion of your account. Once deleted, we will delete or anonymize associated personal information where reasonably possible.</p></div><a href="/account-deletion" className="outline-link">Open deletion guide <ArrowUpRight size={16} /></a></div>
+              <div className="choice-panel"><div><Trash2 size={21} /><h3>Delete from inside the game</h3><p>TapType provides an account-deletion option within the application. You can use it to request deletion of your account. Once deleted, we will delete or anonymize associated personal information where reasonably possible.</p></div><a href={appPath("/account-deletion")} className="outline-link">Open deletion guide <ArrowUpRight size={16} /></a></div>
               <p>Deletion may remove account and profile information, profile pictures, TapType+ entitlement information, gameplay information, and chat not already deleted. It may also cause loss of saved progression, Notes, rankings, cosmetics, achievements, and other account-associated content. Limited information may be retained where reasonably necessary for legal compliance, fraud prevention, security, dispute resolution, other legitimate purposes, or normal backup replacement. Deleting your account does not necessarily cancel a Google Play subscription; active TapType+ subscriptions may need to be cancelled separately through Google Play.</p>
             </section>
 
@@ -155,7 +157,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="site-footer"><a className="brand" href="#top"><Mark /><span className="brand-name">TapType</span></a><p>Competitive typing, clear data practices.</p><a href="/account-deletion">Account deletion <ArrowUpRight size={14} /></a></footer>
+      <footer className="site-footer"><a className="brand" href="#top"><Mark /><span className="brand-name">TapType</span></a><p>Competitive typing, clear data practices.</p><a href={appPath("/account-deletion")}>Account deletion <ArrowUpRight size={14} /></a></footer>
     </div>
   );
 }

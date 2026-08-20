@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build site
-        run: pnpm vite build --base=./
+        run: pnpm vite build --base=/Taptype-privacy-policy/
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:

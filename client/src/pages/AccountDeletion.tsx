@@ -5,9 +5,11 @@
 import { ArrowLeft, BadgeCheck, Flag, LockKeyhole, Trash2 } from "lucide-react";
 
 export default function AccountDeletion() {
+  const homePath = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+
   return (
     <div className="policy-shell deletion-page">
-      <header className="site-header"><a className="back-link" href="/"><ArrowLeft size={17} /> Back to privacy policy</a></header>
+      <header className="site-header"><a className="back-link" href={homePath}><ArrowLeft size={17} /> Back to privacy policy</a></header>
       <main className="deletion-main">
         <div className="deletion-side"><span className="deletion-icon"><Trash2 size={26} /></span><p className="eyebrow"><Flag size={15} fill="currentColor" /> Account deletion</p><h1>Leaving the race?<br />Here’s the clear route.</h1></div>
         <article className="deletion-card">
@@ -19,7 +21,7 @@ export default function AccountDeletion() {
           <div className="deletion-note"><BadgeCheck size={19} /><p><strong>What you may lose.</strong> Account deletion may remove saved progression, Notes, rankings, cosmetics, achievements, TapType+ entitlement information, and other account-associated content. Deleting an account does not automatically cancel an active Google Play subscription.</p></div>
         </article>
       </main>
-      <footer className="site-footer"><a href="/">TapType Privacy Policy</a><p>Account deletion resource</p></footer>
+      <footer className="site-footer"><a href={homePath}>TapType Privacy Policy</a><p>Account deletion resource</p></footer>
     </div>
   );
 }
