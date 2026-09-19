@@ -37,7 +37,7 @@ const overviewCards = [
 ];
 
 function Mark() {
-  return <span className="brand-mark" aria-hidden="true"><img src="${import.meta.env.BASE_URL}tt-logo.png" alt="" /></span>;
+  return <span className="brand-mark" aria-hidden="true"><img src={`${import.meta.env.BASE_URL}tt-logo.png`} alt="" /></span>;
 }
 
 function SectionLabel({ number, label }: { number: string; label: string }) {
